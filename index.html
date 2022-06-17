@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="esp">
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Challenge #2 - Ahorcado</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel="stylesheet" href="reset.css">
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+</head>
+<body>
+  <header>
+    <h1 class="titulo">JUEGO DEL AHORCADO</h1>
+    <img src="img/alura-logo.png" alt="logo de Alura" id="img-logo-alura">
+  </header>
+  <main>
+    <canvas id="tablero" width="650" height="450" class="oculto tablero-horcado"></canvas>
+    <img src="img/pizarron.png" id="pizarron" alt="pizarra de escuela" class="oculto" onload="dibujarPizarron()">
+
+    <div id="contenedor-iniciar-juego" class="botones-en-columna">
+      <input type="button" id="iniciar-juego" value="Iniciar Juego" class="boton-azul">
+      <input type="button" id="agregar-nueva-palabra" value="Agregar palabra" class="boton-blanco">
+    </div>
+    
+    <div id="contenedor-nuevo-juego-desistir" class="botones-de-costado oculto">
+      <input type="button" id="nuevo-juego" value="Nuevo Juego" class="boton-azul">
+      <input type="button" id="desistir" value="Desistir" class="boton-blanco">
+    </div>
+
+    <div id="contenedor-agregar-palabra" class="oculto botones-en-columna">
+      <input type="text" placeholder="Ingrese una Palabra" id="palabra-secreta-a-agregar">
+      <span id="aclaracion-maximo-letras">&#9888 Maximo de 8 letras</span>
+      <div id="contenedor-botones-agregar-palabra" class="botones-de-costado">
+        <input type="button" id="guardar-y-empezar" value="Guardar y Empezar" class="boton-azul">
+        <input type="button" id="cancelar-nueva-palabra" value="Cancelar" class="boton-blanco">
+      </div>
+      <span id="mensajes-al-usuario" class="oculto"></span>
+    </div>
+
+    
+
+    <dialog id="modal">
+      <img src="img/icono-de-atencion.png" alt="icono-de-atencion" width="50" height="50">
+      <p id="mensaje-de-modal"></p>
+      <button id="btn-cerrar-modal" class="boton-azul">OK</button>
+    </dialog>
+    <audio src="sounds/sorpresa.mp4" id="sonido-sorpresa"></audio>
+    <audio src="sounds/sonido_presionar_tecla.mp4" id="sonido-presionar-tecla"></audio>
+    <audio src="sounds/No.mp4" id="sonido-incorrecto"></audio>
+    <audio src="sounds/Oh-Yeah.mp4" id="sonido-correcto"></audio>
+    <audio src="sounds/bye-bye.mp4" id="sonido-derrota"></audio>
+    <audio src="sounds/Victory.mp4" id="sonido-ganador"></audio>
+  </main>
+  
+  <footer>
+    <label for="github">
+    <img src="img/logo-github.png" alt="logo github" id="github" width="30" height="30">
+    <a href="https://github.com/JoseMiguel1989" target="_blank">GitHub</a></label>
+    <label for="linkedin">
+    <img src="img/logo-linkedin.png" alt="logo linkedin" id="linkedin" width="30" height="30">
+    <a href="https://www.linkedin.com/in/jose-miguel-almonte-solis-69585a239/" target="_blank">Linkedin</a></label>
+  </footer>
+  <script src='dibujar.js'></script>
+  <script src="main.js"></script>
+  <script src="botones.js"></script>
+  <script src="mostrar-msj-ocultar-mostrar.js"></script>
+</body>
+</html>
